@@ -1,33 +1,20 @@
 
 /**
- * Write a description of class Room here.
+ * Write a description of interface Room here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author CJ Cassidy 
+ * @version 5/31/16
  */
-public class Room
+public interface Room
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
     /**
-     * Constructor for objects of class Room
-     */
-    public Room()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
+     * An example of a method header - replace this comment with your own
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  y    a sample parameter for a method
+     * @return        the result produced by sampleMethod 
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
+    public int roomX();
+    public int roomY();
+    public int[][] getMap();
 }
