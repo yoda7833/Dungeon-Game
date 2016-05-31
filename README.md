@@ -1,2 +1,2 @@
 # Dungeon-Game
-first gam
+first game
