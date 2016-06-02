@@ -35,26 +35,30 @@ public class Character
     public int takeDamage(int damage)
     {
         health -= damage;
+        return health;
     }
     
     public boolean hassword()
     {
-        
+         //not doing anything just return false to compile
+        return false;
     }
     
     public int hasKey()
     {
-        
+        //not doing anything just return -1 to compile
+        return -1;
     }
     
-    public int hasTrueSight()
+    public boolean hasTrueSight()
     {
-        
+        return hasTrueSight;
     }
     
     public int getHealth(int y)
     {
-        
+         //not doing anything just return -1 to compile
+        return -1;
     }
     
     public void foundSword()
@@ -62,13 +66,28 @@ public class Character
         hasSword = true;
     }
     
+    public void lostSword()
+    {
+        hasSword = false;
+    }
+    
     public void foundKey()
     {
         hasKey = true;
     }
     
-    public void hastruesight()
+    public void lostKey()
+    {
+        hasKey = false;
+    }
+    
+    public void foundTrueSight()
     {
         hasTrueSight = true;
+    }
+    
+    public void lostTrueSight()
+    {
+        hasTrueSight = false;
     }
 }
