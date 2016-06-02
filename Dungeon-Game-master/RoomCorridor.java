@@ -10,7 +10,7 @@ public class RoomCorridor implements Room
     // instance variables - replace the example below with your own
     int[][] map;
     /*
-     * 1 = wall, 0=empty space
+     * 1 = wall, 0 = empty space, 2 = door
      */
 
     /**
@@ -52,5 +52,6 @@ public class RoomCorridor implements Room
                 if(row==0||col==0||row==map.length-1||col==map[0].length-1)
                     map[row][col] = 1;
             }
+        map[map.length/2][0]=2;
     }
 }
