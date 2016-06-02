@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=RoomCorridor()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ RoomCorridor\r\n
+comment1.params=x\ y
+comment1.target=RoomCorridor(int,\ int)
+comment2.params=
+comment2.target=int\ roomX()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment3.params=
+comment3.target=int\ roomY()
+comment4.params=
+comment4.target=int[][]\ getMap()
+comment5.params=
+comment5.target=void\ fillMap()
+numComments=6
