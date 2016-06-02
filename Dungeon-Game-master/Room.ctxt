@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=int\ roomX()
-comment0.text=\r\n\ An\ example\ of\ a\ method\ header\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ \ \ \ the\ result\ produced\ by\ sampleMethod\ \r\n
+comment0.text=\ MAP\ KEY\ \r\n\ 1\ \=\ wall,\ 0\=empty\ space\r\n
 comment1.params=
 comment1.target=int\ roomY()
 comment2.params=

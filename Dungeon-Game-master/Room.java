@@ -13,6 +13,9 @@ public interface Room
      * @param  y    a sample parameter for a method
      * @return        the result produced by sampleMethod 
      */
+    /* MAP KEY 
+     * 1 = wall, 0=empty space
+     */
     
     public int roomX();
     public int roomY();
