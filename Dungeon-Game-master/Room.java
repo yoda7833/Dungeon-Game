@@ -14,7 +14,7 @@ public interface Room
      * @return        the result produced by sampleMethod 
      */
     /* MAP KEY 
-     * 1 = wall, 0=empty space
+     * 1 = wall, 0=empty space, door = 2
      */
     
     public int roomX();
