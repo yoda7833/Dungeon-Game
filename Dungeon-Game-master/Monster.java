@@ -1,19 +1,19 @@
 
 /**
- * Write a description of class Room here.
+ * Write a description of class Monster here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Room
+public class Monster
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Room
+     * Constructor for objects of class Monster
      */
-    public Room()
+    public Monster()
     {
         // initialise instance variables
         x = 0;
