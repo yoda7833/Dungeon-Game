@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=int\ roomX()
-comment0.text=\ MAP\ KEY\ \r\n\ 1\ \=\ wall,\ 0\=empty\ space\r\n
+comment0.text=\ MAP\ KEY\ \r\n\ 1\ \=\ wall,\ 0\=empty\ space,\ door\ \=\ 2\r\n
 comment1.params=
 comment1.target=int\ roomY()
 comment2.params=
