@@ -10,7 +10,7 @@ public class RoomCorridor implements Room
     // instance variables - replace the example below with your own
     int[][] map;
     /*
-     * 1 = wall, 0 = empty space, 2 = door
+     * 1 = wall, 0 = empty space, 2 = door , 3 = monster
      */
 
     /**
@@ -18,7 +18,7 @@ public class RoomCorridor implements Room
      */
     public RoomCorridor()
     {
-        map = new int[5][(int)(Math.random()*5)+1];
+        map = new int[5][(int)(Math.random()*5)+5];
         fillMap();
     }
     /**
@@ -37,7 +37,7 @@ public class RoomCorridor implements Room
         for(int row =0; row<map.length;row++)
             for(int col =0; col<map[0].length;col++)
             {
-                map[row][col] = input.getMap[row][col];
+                map[row][col] = input.getMap()[row][col];
             }
     }
 
@@ -56,7 +56,7 @@ public class RoomCorridor implements Room
         return map;
     }
     
-    public int[][] changeMap(int row, int col, int change);
+    public int changeMap(int row, int col, int change)
     {
         int changed = map[row][col];
         map[row][col]=change;
@@ -66,7 +66,6 @@ public class RoomCorridor implements Room
     private void fillMap()
     {
         //still needs work
-            }
         for(int row =0; row<map.length;row++)
             for(int col =0; col<map[0].length;col++)
             {
@@ -76,5 +75,16 @@ public class RoomCorridor implements Room
                     map[row][col] = 0;
             }
         map[map.length/2][0]=2;
+        fillMonster();
+    }
+    
+    private void fillMonster()
+    {
+        for(int row =0; row<map.length;row++)
+            for(int col =0; col<map[0].length;col++)
+            {
+                if(map[row][col]==0&&(int)(Math.random()*2)==0)
+                    map[row][col] = 3;
+            }
     }
 }

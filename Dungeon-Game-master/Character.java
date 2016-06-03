@@ -8,8 +8,8 @@
 public class Character
 {
     private int health;
-    private int locationX;
-    private int locationY;
+    private int locationRow;
+    private int locationCol;
     private boolean hasSword;
     private boolean hasKey;
     private boolean hasTrueSight;
@@ -19,12 +19,22 @@ public class Character
      */
     public Character()
     {
-        int health = 20;
-        int locationX = 0;
-        int locationY = 0;
-        boolean hasSword = false;
-        boolean hasKey = false;
-        boolean hasTrueSight = false;
+        health = 20;
+        locationRow = 0;
+        locationCol = 0;
+        hasSword = false;
+        hasKey = false;
+        hasTrueSight = false;
+    }
+    
+    public Character(int row, int col)
+    {
+        health = 20;
+        locationRow = row;
+        locationCol = col;
+        hasSword = false;
+        hasKey = false;
+        hasTrueSight = false;
     }
 
     public int getHealth()
@@ -57,10 +67,12 @@ public class Character
     
     public int getHealth(int y)
     {
-         //not doing anything just return -1 to compile
-        return -1;
+        return health+=y;
     }
-    
+    public int lostHealth(int y)
+    {
+        return health-=y;
+    }
     public void foundSword()
     {
         hasSword = true;
@@ -89,5 +101,24 @@ public class Character
     public void lostTrueSight()
     {
         hasTrueSight = false;
+    }
+    
+    public int getPosRow()
+    {
+        return locationRow;
+    }
+    
+    public int getPosCol()
+    {
+        return locationCol;
+    }
+    public int setPosRow(int x)
+    {
+        return locationRow+=x;
+    }
+    
+    public int setPosCol(int x)
+    {
+        return locationCol+=x;
     }
 }
