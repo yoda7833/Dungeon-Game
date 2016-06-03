@@ -73,6 +73,12 @@ public class Character
     {
         return health-=y;
     }
+    public int setHealth(int x)
+    {
+        int oldHealth = health;
+        health=x;
+        return oldHealth;
+    }
     public void foundSword()
     {
         hasSword = true;
@@ -120,5 +126,11 @@ public class Character
     public int setPosCol(int x)
     {
         return locationCol+=x;
+    }
+    
+    public void setPos(int row, int col)
+    {
+        locationRow=row;
+        locationCol=col;
     }
 }
