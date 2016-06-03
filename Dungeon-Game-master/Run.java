@@ -8,21 +8,33 @@ import java.util.Scanner;
 public class Run
 {
     //player = 9
-    static private RoomCorridor room;
+    static private Room room;
     static private Character player;
     static private Scanner reader;
+    static private boolean hideMonsters;
     static public void run()
     {
+        hideMonsters = true;
         reader = new Scanner(System.in);
-        room = new RoomCorridor();
-        player = new Character(2,room.getMap()[0].length-2);
+        room = new Room();
+        player = new Character(room.getMap().length/2,room.getMap()[0].length-2);
         while(player.getHealth()>0)
         {
             printing();
-            move();
+            if(room.getMap()[player.getPosRow()][player.getPosCol()]==3)//will start battle
+                System.out.println("You walked onto a monter");
+            if(move().compareTo("q")==0)//causes
+                break;
             printing();
-            if(room.getMap()[player.getPosRow()][player.getPosCol()]==3||room.getMap()[player.getPosRow()][player.getPosCol()]==1)
-                player.lostHealth(100);
+            if(room.getMap()[player.getPosRow()][player.getPosCol()]==1)
+                player.setHealth(-1);
+            if(room.getMap()[player.getPosRow()][player.getPosCol()]==3)
+                System.out.println("You walked onto a monter");
+            if(room.getMap()[player.getPosRow()][player.getPosCol()]==2)
+            {
+                room = new Room();
+                player.setPos(room.getMap().length/2,room.getMap()[0].length-2);
+            }
         }
         System.out.println();
         System.out.println("You Died Game Over");
@@ -39,6 +51,10 @@ public class Run
                 {
                     System.out.print(9+" ");
                 }
+                else if(hideMonsters&& room.getMap()[row][col]==3)
+                {
+                    System.out.print(0 +" ");
+                }
                 else
                 {
                     System.out.print(room.getMap()[row][col]+" ");
@@ -48,10 +64,14 @@ public class Run
         }
     }
     
-    static private void move()
+    static private String move()
     {
-        System.out.println("a WASD imput");
-        String n = reader.next(); // Scans the next token of the input as an int.
+        System.out.println("Input a WASD imput to move or q to quit");
+        String n;
+        //do{
+             n = reader.next(); // Scans the next token of the input as an int.
+           // n = i.substring(0,1);
+        //}while(!(n.compareTo("w")==0||n.compareTo("a")==0||n.compareTo("s")!=0||n.compareTo("d")==0));
         switch(n){
             case "w": 
                      player.setPosRow(-1);
@@ -66,5 +86,6 @@ public class Run
                     player.setPosCol(1);
                     break;
         }
+        return n;
     }
 }
