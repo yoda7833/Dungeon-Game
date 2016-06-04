@@ -11,6 +11,7 @@ public class Room
     /*
      * 1 = wall, 0 = empty space, 2 = door , 3 = monster
      */
+    private char enter;
     private int[][] map;
     private int roomType;
     /**
@@ -40,14 +41,20 @@ public class Room
         //map = new int[5][(int)(Math.random()*10)+10];
         //fillMap();
     }
-    /**
-     *  Constructor for objects of class RoomCorridor when given the map size
-     */
-    public Room(int x, int y, int type)
+    public Room(char type)
     {
-        map = new int[x][y];
-        fillMap();
-        roomType = type;
+        enter = type;
+        int random = (int)(Math.random()*100+1);
+        if(enter == 't'||enter == 'b')
+        {
+            map = new int[(int)(Math.random()*10)+10][5];
+            fillMap();
+        }
+        else
+        {
+            
+        }
+        
     }
     /**
      *  Constructor for objects of class RoomCorridor when given a RoomCorridor object
@@ -109,8 +116,26 @@ public class Room
         for(int row =0; row<map.length;row++)
             for(int col =0; col<map[0].length;col++)
             {
-                if(map[row][col]==0&&(int)(Math.random()*2)==0)
+                if(map[row][col]==0&&(int)(Math.random()*3)==0&&col!=1&&col!=map[0].length-2&&row!=1&&row!=map.length-2)
                     map[row][col] = 3;
             }
+        boolean isMonster=false;
+        for(int[] x: map)
+            for(int y: x)
+            {
+                if(y==3)
+                    isMonster=true;
+            }
+        if(isMonster==false)
+        {
+            for(int row =0; row<map.length;row++)
+                for(int col =0; col<map[0].length;col++)
+                {
+                    if(map[row][col]==2&&map[row+1][col]==2)
+                    {
+                        
+                    }
+                }
+        }
     }
 }

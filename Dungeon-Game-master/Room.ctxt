@@ -2,9 +2,8 @@
 comment0.params=
 comment0.target=Room()
 comment0.text=\r\n\ \ Default\ constructor\ for\ objects\ of\ class\ RoomCorridor\r\n
-comment1.params=x\ y\ type
-comment1.target=Room(int,\ int,\ int)
-comment1.text=\r\n\ \ Constructor\ for\ objects\ of\ class\ RoomCorridor\ when\ given\ the\ map\ size\r\n
+comment1.params=type
+comment1.target=Room(char)
 comment2.params=input
 comment2.target=Room(Room)
 comment2.text=\r\n\ \ Constructor\ for\ objects\ of\ class\ RoomCorridor\ when\ given\ a\ RoomCorridor\ object\r\n
