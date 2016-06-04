@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Room()
+comment0.text=\r\n\ \ Default\ constructor\ for\ objects\ of\ class\ RoomCorridor\r\n
+comment1.params=type
+comment1.target=Room(char)
+comment2.params=input
+comment2.target=Room(Room)
+comment2.text=\r\n\ \ Constructor\ for\ objects\ of\ class\ RoomCorridor\ when\ given\ a\ RoomCorridor\ object\r\n
+comment3.params=
+comment3.target=int\ getRoomType()
+comment4.params=
+comment4.target=int\ roomX()
+comment5.params=
+comment5.target=int\ roomY()
+comment6.params=
+comment6.target=int[][]\ getMap()
+comment7.params=row\ col\ change
+comment7.target=int\ changeMap(int,\ int,\ int)
+comment8.params=
+comment8.target=void\ fillMap()
+comment9.params=
+comment9.target=void\ fillMonster()
+numComments=10

@@ -4,10 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE: Dungeon Game
-PURPOSE OF PROJECT: Class project and to build our first game
-VERSION or DATE: 6/4/16 (Very, Very early build. Most feature not implemented)
-HOW TO START THIS PROJECT: open the package.bluej with bluej installed and run the run class
-AUTHORS: CJ and Roman 
+PROJECT TITLE:
+PURPOSE OF PROJECT:
+VERSION or DATE:
+HOW TO START THIS PROJECT:
+AUTHORS:
 USER INSTRUCTIONS:
-Install bluej and clone the master branch
