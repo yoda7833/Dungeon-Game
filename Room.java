@@ -51,23 +51,40 @@ public class Room
     public Room(char enter)
     {
         enterPoint = enter;
-        int rand = (int)(Math.random()*3);
+        int rand = (int)(Math.random()*4);
         if(enterPoint == 'r' || enterPoint == 'l')
         {
             if(rand==0)
             {
                 roomType=10;
                 map = new int[5][5]; //Small Room
+                fillMap();
             }
             else if(rand==1)
             {
-                roomType=10;
+                roomType=7;
                 map = new int[(int)(Math.random()*3)+10][(int)(Math.random()*3)+10]; //big Room
+                fillMap();
+            }
+            else if(rand == 2)
+            {
+                roomType=8;
+                map = new int[(int)(Math.random()*10)+10][(int)(Math.random()*10)+10];//hole in the middle
+                fillMap();
+                for(int row =5;row<=roomRow()-6;row++)
+                    for(int col =5;col<=roomCol()-6;col++)
+                    {
+                        if(row==5||col==5||col==roomCol()-6||row==roomRow()-6)
+                            map[row][col]=1;
+                        else
+                            map[row][col]=-1;
+                    }
             }
             else
             {
                 roomType=0;
                 map = new int[5][(int)(Math.random()*10)+10]; //horizontal corridor
+                fillMap();
             }
 
         }
@@ -77,16 +94,33 @@ public class Room
             {
                 roomType=10;
                 map = new int[5][5]; //Small Room
+                fillMap();
             }
             else if(rand==1)
             {
-                roomType=10;
+                roomType=7;
                 map = new int[(int)(Math.random()*3)+10][(int)(Math.random()*3)+10]; //big Room
+                fillMap();
+            }
+            else if(rand == 2)
+            {
+                roomType=8;
+                map = new int[(int)(Math.random()*10)+10][(int)(Math.random()*10)+10];//hole in the middle
+                fillMap();
+                for(int row =5;row<=roomRow()-6;row++)
+                    for(int col =5;col<=roomCol()-6;col++)
+                    {
+                        if(row==5||col==5||col==roomCol()-6||row==roomRow()-6)
+                            map[row][col]=1;
+                        else
+                            map[row][col]=-1;
+                    }
             }
             else
             {
                 roomType=3;
                 map = new int[(int)(Math.random()*10)+10][5]; //verticle corridor
+                fillMap();
             }
 
         }
@@ -94,8 +128,6 @@ public class Room
         //map = new int[(int)(Math.random()*3)+10][(int)(Math.random()*3)+10]; //big Room
         //map = new int[(int)(Math.random()*10)+10][5]; //verticle corridor
         //map = new int[3][3];
-        fillMap();
-
     }
 
     public int getLocationRow()
@@ -149,6 +181,26 @@ public class Room
         placeDoors();
         placePlayer();
         fillMonster();
+        if(roomType==10)
+        {
+            map[2][2]=6;
+        }
+        else
+        {
+            addChest();
+        }
+    }
+    
+    private void addChest()
+    {
+        //int random = (int)(Math.random()*3);
+        int random =0;
+        if(random==0)
+        {
+            int randomRow=(int)((Math.random()*(map.length-6))+3);
+            int randomCol=(int)((Math.random()*(map[0].length-6))+3);
+            map[randomRow][randomCol]=5;
+        }
     }
 
     private void placePlayer()
@@ -254,7 +306,7 @@ public class Room
         for(int row =0; row<map.length;row++)
             for(int col =0; col<map[0].length;col++)
             {
-                if(map[row][col]==0&&(int)(Math.random()*2)==0)
+                if(map[row][col]==0&&(int)(Math.random()*7)==0)
                     map[row][col] = 3;
             }
     }
