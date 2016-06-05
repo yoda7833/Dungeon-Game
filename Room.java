@@ -163,7 +163,7 @@ public class Room
         {
             //spawn left
             locationRow = roomRow()/2;
-            locationCol = 2;
+            locationCol = 1;
         }
         else if(enterPoint == 't')
         {
@@ -174,7 +174,7 @@ public class Room
         else if(enterPoint == 'b')
         {
             //spawn top
-            locationRow = 2;
+            locationRow = 1;
             locationCol = roomCol()/2;
         }
     }
