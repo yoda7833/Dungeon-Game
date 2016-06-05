@@ -5,6 +5,4 @@ comment1.params=
 comment1.target=void\ printing()
 comment2.params=
 comment2.target=java.lang.String\ move()
-comment3.params=
-comment3.target=void\ createAndShowGUI()
-numComments=4
+numComments=3
