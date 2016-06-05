@@ -14,22 +14,29 @@ public class Run
     static private boolean hideMonsters;
     static public void run()
     {
-        hideMonsters = true;
+        hideMonsters = false;
         reader = new Scanner(System.in);
         room = new Room();
         player = new Character(room.getMap().length/2,room.getMap()[0].length/2);
         while(player.getHealth()>0)
         {
             printing();
-            if(room.getMap()[player.getPosRow()][player.getPosCol()]==3)//will start battle
-                System.out.println("You walked onto a monter");
+            //if(room.getMap()[player.getPosRow()][player.getPosCol()]==3)//will start battle
+            //System.out.println("You walked onto a monter");
             if(move().compareTo("q")==0)//causes
                 break;
             printing();
             if(room.getMap()[player.getPosRow()][player.getPosCol()]==1)
                 player.setHealth(-1);
             if(room.getMap()[player.getPosRow()][player.getPosCol()]==3)
-                System.out.println("You walked onto a monter");
+            {
+                boolean won = player.fighting();
+                printing();
+                if(won)
+                {
+                    room.changeMap(player.getPosRow(),player.getPosCol(),0);
+                }
+            }
             if(room.getMap()[player.getPosRow()][player.getPosCol()]==2)
             {
                 if(player.getPosRow()==0)
