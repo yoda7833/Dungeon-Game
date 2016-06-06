@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
 /**
  * Write a description of class Character here.
  * 
@@ -18,6 +20,7 @@ public class Character
     private boolean armor;
     private Scanner reader;
     private int potion;
+    JFrame frame = new JFrame("Dungeon Game");
     /**
      * Constructor for objects of class Character
      */
@@ -428,6 +431,7 @@ public class Character
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
+        displayBoss();
         System.out.println("HOLY SHIT THAT WASN'T A CHEST");
         do{
             if((int)(Math.random()*2)==0)
@@ -505,5 +509,21 @@ public class Character
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
+    }
+    
+    public void displayBoss()
+    {
+        frame.getContentPane().removeAll();
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = new JPanel();
+        ImageIcon image9 = new ImageIcon(getClass().getResource("boss.jpg"));
+        JLabel label9 = new JLabel(image9);
+        panel.add(label9); 
+        frame.add(panel);
+        frame.revalidate();
+        frame.repaint();
+        frame.pack();
     }
 }
