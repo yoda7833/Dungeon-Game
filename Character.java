@@ -80,6 +80,13 @@ public class Character
         return hasTrueSight;
     }
 
+    public boolean hasShield()
+    {
+        if(block >=1)
+            return true;
+        return false;
+    }
+
     public boolean hasArmor() //added
     {
         return armor;
@@ -126,12 +133,13 @@ public class Character
         }
         return health;
     }
-    
+
     //I organized the methods so they are easier to find. They are grouped with their opposite or related method
     public int getMaxHealth()
     {
         return maxHealth;
     }
+
     public void usePotion()
     {
         if(potion>0)
@@ -147,10 +155,12 @@ public class Character
             reader.next();
         }
     }
+
     public int getPotions()
     {
         return potion;
     }
+
     public void foundSword()
     {
         hasSword = true;
@@ -235,31 +245,35 @@ public class Character
             if(random==0)
                 System.out.println("Hope it wasn't the blue one");
         }
-        if(number >=61 && number <= 80)
+        if(number >=11 && number <= 25)
         {
             foundArmor();
             System.out.println("You found some armor");
         }
-        if(number >=81 && number <= 100)
+        if(number >=25 && number <= 40)
         {
             foundSword();
             System.out.println("You found a sword");
         }
-        if(number >=11 && number <= 60)
+        if(number >=41 && number <= 100)
         {
             System.out.println("You found nothing");
         }
     }
-    
+
     public void foundChest() //if you step on a space with a chest run this method
     {
         int number = ((int)(Math.random()*100 + 1));
-        if(number >=1 && number <= 50)
+        if(number >=1 && number <= 5)
+        {
+            System.out.println("You found nothing");
+        }
+        if(number >=5 && number <= 50)
         {
             foundShield();
             System.out.println("You found a sheild");
         }
-        if(number >=76 && number <= 85)
+        if(number >=76 && number <= 82)
         {
             foundTrueSight();
             System.out.println("You found a potion of true sight");
@@ -272,7 +286,7 @@ public class Character
             if(random==0)
                 System.out.println("Hope it wasn't the blue one");
         }
-        if(number >=86 && number <= 90)
+        if(number >=83 && number <= 90)
         {
             foundKey(); //possible addition
             System.out.println("You found a key, this could come in handy");
@@ -313,7 +327,7 @@ public class Character
             System.out.println("Your health: "+ health);
             System.out.println("Monster's health: "+ monsterHealth);
             System.out.println("Type to fight");
-            System.out.println("Fight options: POWER  PERCISION  RUN");
+            System.out.println("Fight options: POWER  PRECISE  RUN");
             String n;
             String k;
             do{
@@ -322,7 +336,7 @@ public class Character
                 }while(k.length()<=0);
                 n = k.toLowerCase();
                 //System.out.println();
-            }while(!(n.compareTo("power")==0||n.compareTo("percision")==0||n.compareTo("run")==0));
+            }while(!(n.compareTo("power")==0||n.compareTo("precise")==0||n.compareTo("run")==0));
 
             if(n.compareTo("power")==0)
             {
@@ -343,7 +357,7 @@ public class Character
                         if(rand>=11&&rand<=31)
                         {
                             armor = false;
-                            System.out.println("Your Sword Armor");
+                            System.out.println("Your Armor Broke");
                             int random1 = (int)(Math.random()*50+1);
                             if(random1==1)
                                 System.out.println("Thats what you get for using Armor you found on the ground");
@@ -373,7 +387,7 @@ public class Character
                     }
                 }
             }
-            else if(n.compareTo("percision")==0)
+            else if(n.compareTo("precise")==0)
             {
                 if(hasSword)
                 {
@@ -390,11 +404,8 @@ public class Character
                 return false;
             }
             takeDamage((int)(Math.random()*4+1));
-            try {
-                Thread.sleep(1000);                 //1000 milliseconds is one second.
-            } catch(InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
+            System.out.println("Type Anything to Continue...");
+            reader.next();
             System.out.print('\f');
         }while(monsterHealth>0&&health>0);
         foundBag();
@@ -405,9 +416,10 @@ public class Character
         }
         return true;
     }
+
     public void bossFight()
     {
-        int monsterHealth = (int)(Math.random()*15+35);
+        int monsterHealth = (int)(Math.random()*25+125);
         boolean monsterArmor= false;
         System.out.println('\f');
         System.out.println("You reach inside and see the dim glow of a holy sword...");
@@ -427,7 +439,7 @@ public class Character
             System.out.println("Your health: "+ health);
             System.out.println("Boss health: "+ monsterHealth);
             System.out.println("Type to fight");
-            System.out.println("Fight options: POWER  PERCISION  POTION");
+            System.out.println("Fight options: POWER  PRECISE  POTION");
             String n;
             String k;
             do{
@@ -436,7 +448,7 @@ public class Character
                 }while(k.length()<=0);
                 n = k.toLowerCase();
                 //System.out.println();
-            }while(!(n.compareTo("power")==0||n.compareTo("percision")==0||n.compareTo("run")==0));
+            }while(!(n.compareTo("power")==0||n.compareTo("precise")==0||n.compareTo("run")==0||n.compareTo("potion")==0));
 
             if(n.compareTo("power")==0)
             {
@@ -465,7 +477,7 @@ public class Character
                     }
                 }
             }
-            else if(n.compareTo("percision")==0)
+            else if(n.compareTo("precise")==0)
             {
                 if(hasSword)
                 {
@@ -488,7 +500,6 @@ public class Character
             }
             System.out.print('\f');
         }while(monsterHealth>0&&health>0);
-        foundBag();
         try {
             Thread.sleep(1000);                 //1000 milliseconds is one second.
         } catch(InterruptedException ex) {

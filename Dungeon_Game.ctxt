@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=
+comment1.target=void\ printing()
+comment2.params=
+comment2.target=java.lang.String\ move()
+comment3.params=
+comment3.target=void\ displayInventory()
+comment4.params=
+comment4.target=void\ displayBoss()
+comment5.params=
+comment5.target=void\ displayMonster()
+comment6.params=
+comment6.target=void\ displayFrame()
+numComments=7
