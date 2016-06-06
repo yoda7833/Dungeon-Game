@@ -51,7 +51,7 @@ public class Dungeon_Game
                 player.setHealth(-1);
             if(room.getMap()[player.getPosRow()][player.getPosCol()]==3)
             {
-                frame.dispose();
+                displayMonster();
                 boolean win = player.fighting();
                 System.out.println('\f');
                 //printing();
@@ -84,8 +84,8 @@ public class Dungeon_Game
             {
                 if(room.getMap()[player.getPosRow()][player.getPosCol()]==6&&player.hasKey())
                 {
+                    frame.dispose();
                     player.bossFight();
-
                     if(!player.isDead())
                     {
                         won = true;
