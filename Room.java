@@ -306,7 +306,7 @@ public class Room
         for(int row =0; row<map.length;row++)
             for(int col =0; col<map[0].length;col++)
             {
-                if(map[row][col]==0&&(int)(Math.random()*7)==0)
+                if(map[row][col]==0&&(int)(Math.random()*6)==0)
                     map[row][col] = 3;
             }
     }
